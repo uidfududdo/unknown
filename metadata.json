@@ -1,0 +1,6 @@
+{
+  "name": "Samurai Restaurant",
+  "description": "Order authentic Japanese cuisine and reserve private tables effortlessly, with an intuitive admin panel for menu updates, all in a visually stunning interface.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

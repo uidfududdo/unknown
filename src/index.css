@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", serif;
+  --font-decorative: "Cinzel Decorative", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-gold: #c9a84c;
+  --color-gold-dark: #aa862e;
+  --color-crimson: #8B1A1A;
+  --color-crimson-light: #b42b2b;
+  --color-ink: #080808;
+  --color-charcoal: #121212;
+}
+
+@layer base {
+  body {
+    background-color: #080808;
+    color: #f0ede6;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom premium ambient glow states & utility styles */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.15);
+}
+
+.crimson-glow {
+  box-shadow: 0 0 20px rgba(139, 26, 26, 0.25);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f3e5ab 0%, #c9a84c 50%, #8a6f27 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.red-gradient-text {
+  background: linear-gradient(135deg, #ff4d4d 0%, #8B1A1A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Atmospheric custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #8B1A1A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c;
+}
+
+/* Custom styles for reservation ticket printing */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Hide regular elements from the page during print */
+  header, nav, footer, .no-print, button, .btn-print-hide {
+    display: none !important;
+  }
+
+  /* Container structure for printed ticket printout */
+  #reservationpage-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    background: #ffffff !important;
+  }
+
+  .print-ticket-outer {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Target Ticket Card precisely */
+  .samurai-printable-ticket {
+    background-color: #faf7f2 !important;
+    border: 3px double #111111 !important;
+    color: #111111 !important;
+    padding: 32px !important;
+    margin: 20px auto !important;
+    width: 100% !important;
+    max-width: 480px !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    page-break-inside: avoid !important;
+    display: block !important;
+  }
+
+  .samurai-printable-ticket * {
+    color: #111111 !important;
+    border-color: #111111 !important;
+    text-shadow: none !important;
+  }
+
+  .samurai-badge-red {
+    border: 2px solid #8B1A1A !important;
+    color: #8B1A1A !important;
+  }
+}
+
